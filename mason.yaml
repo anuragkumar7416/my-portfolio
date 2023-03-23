@@ -1,0 +1,6 @@
+bricks:
+  hello: 0.1.0+1
+  cubit_brick:
+    git:
+      url: "https://github.com/flutterflytech/mason_templates"
+      path: bricks/cubit_brick
