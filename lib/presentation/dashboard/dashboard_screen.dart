@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/extensions/typography_extension.dart';
 import 'package:portfolio/presentation/dashboard/widgets/drawer.dart';
+import 'package:portfolio/presentation/footer/footer_screen.dart';
 import 'package:portfolio/presentation/home/home_screen.dart';
 
 import '../../app_constants.dart';
@@ -70,15 +71,19 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 backgroundColor: Colors.white,
                 body: Row(
                   children: [
-                   NavigationDrawerWidget(),
+                   const NavigationDrawerWidget(),
 
                     Expanded(
-                      child: Column(
-                        children: [
-                          HomeScreen(),
-                        ],
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            HomeScreen(),
+                            Footer(),
+                          ],
+                        ),
                       ),
-                    )
+                    ),
+
                     //Expanded(child: widget.child),
                   ],
                 ),

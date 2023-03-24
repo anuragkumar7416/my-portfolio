@@ -11,7 +11,7 @@ class CopyrightWidget extends StatefulWidget {
 class _CopyrightWidgetState extends State<CopyrightWidget> {
   @override
   Widget build(BuildContext context) {
-    return Text('Copyright ©2023 All rights reserved | This website is made by FlutterFly',style: context.secondaryLabelLarge,textAlign: TextAlign.center,);
+    return Text('Copyright ©2023 All rights reserved | This website is made \u2665 by FlutterFly',style: context.secondaryLabelLarge,textAlign: TextAlign.center,);
 
   }
 }
