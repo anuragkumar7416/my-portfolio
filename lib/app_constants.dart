@@ -8,16 +8,20 @@ import 'package:flutter/material.dart';
 
 class CLR {
 
-  static const notesBorderColor = Color(0xffe0e0e0);
-  static const defaultTextColor = Color(0xff5f6368);
-  static const secondaryTextColor = Color(0xff202124);
-  static const searchBoxColor = Color(0xfff1f3f4);
+  static const drawerBackgroundColor = Color(0xfff7f6f5);
+  static const secondaryTextColor = Color(0xff999999);
+
 
 }
 
 class ImagePaths {
   static const String root = 'assets/images';
   static const String appLogo = '$root/app_logo.png';
+  static const String twitterIcon = '$root/ic_twitter.png';
+  static const String facebookIcon = '$root/ic_facebook.png';
+  static const String instagramIcon = '$root/ic_insta.png';
+  static const String linkedinIcon = '$root/ic_linkedin.png';
+  static const String myPicture = '$root/img_me.png';
 
 
 }
