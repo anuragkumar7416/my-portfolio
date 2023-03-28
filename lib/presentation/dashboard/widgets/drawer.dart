@@ -56,7 +56,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                             }));
                           }),
                     ),
-                    CopyrightWidget(),
+                    CopyrightWidget(type: 1,),
                     SizedBox(height: 16,),
                     SocialAccountsWidget()
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/extensions/typography_extension.dart';
+import 'package:portfolio/presentation/footer/widgets/footer_title.dart';
 import 'package:portfolio/presentation/footer/widgets/links_widget.dart';
 
 import '../../../app_constants.dart';
@@ -17,28 +18,28 @@ class LinkList extends StatelessWidget {
     ];
 
     return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.only(top:84,bottom: 84),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Links',style: context.titleLarge!.copyWith(color: Colors.white,fontWeight: FontWeight.w700),),
-            const SizedBox(height: 40,),
-            Expanded(
-              child: ListView.separated(
-                  itemBuilder: (context, index) {
-                    return LinkWidget(linkName: _listOfNavigationItem[index]);
-                  },
-                  separatorBuilder: (context, index) {
-                    return const Divider(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const FooterTitle(text: 'Links'),
+          const SizedBox(height: 20,),
+          Expanded(
+            child: ListView.separated(
+                itemBuilder: (context, index) {
+                  return LinkWidget(linkName: _listOfNavigationItem[index]);
+                },
+                separatorBuilder: (context, index) {
+                  return const Divider(
+                    height: 25,
 
-                      color: CLR.secondaryTextColor,
-                    );
-                  },
-                  itemCount: _listOfNavigationItem.length),
-            ),
-          ],
-        ),
+                    thickness: 0.4,
+
+                    color: CLR.secondaryTextColor,
+                  );
+                },
+                itemCount: _listOfNavigationItem.length),
+          ),
+        ],
       ),
     );
   }
