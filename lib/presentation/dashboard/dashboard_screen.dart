@@ -6,6 +6,7 @@ import 'package:portfolio/extensions/typography_extension.dart';
 import 'package:portfolio/presentation/dashboard/widgets/drawer.dart';
 import 'package:portfolio/presentation/footer/footer_screen.dart';
 import 'package:portfolio/presentation/home/home_screen.dart';
+import 'package:portfolio/presentation/projects/projects_screen.dart';
 
 import '../../app_constants.dart';
 import '../../classes/navigation_destination.dart';
@@ -50,10 +51,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
     switch (widget.location) {
       case RoutesName.about:
         return 1;
+      case RoutesName.projects:
+        return 2;
       case RoutesName.contact:
         return 3;
-      case RoutesName.projects:
-        return 4;
+
       default:
         return 0;
     }
@@ -71,20 +73,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 backgroundColor: Colors.white,
                 body: Row(
                   children: [
-                   const NavigationDrawerWidget(),
+                    NavigationDrawerWidget(currentIndex: getCurrentIndex(),),
 
-                    Expanded(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            HomeScreen(),
-                            Footer(),
-                          ],
-                        ),
-                      ),
-                    ),
-
-                    //Expanded(child: widget.child),
+                    Expanded(child: widget.child),
                   ],
                 ),
               );

@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
 
 class ProjectsWidget extends StatelessWidget {
-  const ProjectsWidget({Key? key}) : super(key: key);
+  final String image;
+  const ProjectsWidget({Key? key, required this.image}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      width: 585,
+      height: 435,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Stack(
+        children: [
+          Image.asset(image),
+        ],
+      ),
+    );
   }
 }
