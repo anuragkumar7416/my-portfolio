@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/commonWidgets/page_header.dart';
 import 'package:portfolio/presentation/projects/widgets/projects_widget.dart';
 
+import '../../app_constants.dart';
+import '../../classes/project.dart';
+import '../footer/footer_screen.dart';
+
 class ProjectsScreen extends StatefulWidget {
   const ProjectsScreen({Key? key}) : super(key: key);
 
@@ -10,24 +14,16 @@ class ProjectsScreen extends StatefulWidget {
 }
 
 class _ProjectsScreenState extends State<ProjectsScreen> {
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const PageHeader(heading: 'Projects'),
-          GridView.builder(
-            shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: 4,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,crossAxisSpacing: 30,mainAxisSpacing: 30),
-              itemBuilder: (context, index) {
-                return Container(
-                  width: 200,
-                  height: 200,
-                  color: Colors.teal,
-                );
-              }),
+          ProjectsWidget(),
+
+
+          const Footer(),
         ],
       ),
     );

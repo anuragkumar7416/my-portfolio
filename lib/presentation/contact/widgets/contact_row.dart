@@ -8,7 +8,7 @@ class ContactRow extends StatelessWidget {
   Widget build(BuildContext context) {
     List<List<String>> list = [
       ['Address','198 West 21th Street,\n Suite 721 New York NY 10016'],
-      ['Phone','91+9354994778'],
+      ['Phone','+91-9354994778'],
       ['Email' ,'anuragkumar7416@gmail.com'],
       ['Website','yoursite@domain.com'],
     ];
