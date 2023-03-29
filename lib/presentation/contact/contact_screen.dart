@@ -29,19 +29,19 @@ class _ContactScreenState extends State<ContactScreen> {
               children: [
                 const PageHeader(heading: 'Contact Information'),
                 ContactRow(),
-                // Expanded(
-                //   child: Row(
-                //     children: [
-                //       MapView(),
-                //       //ContactForm()
-                //     ],
-                //   ),
-                // ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    MapView(),
+                    ContactForm()
+                  ],
+                ),
               ],
             ),
           ),
 
-          Spacer(flex: 1,),
+
+          //Spacer(flex: 1,),
           Footer(),
 
 
