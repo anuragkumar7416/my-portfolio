@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:portfolio/presentation/about/about_screen.dart';
 import 'package:portfolio/presentation/contact/contact_screen.dart';
 import 'package:portfolio/presentation/dashboard/dashboard_screen.dart';
 import 'package:portfolio/presentation/home/home_screen.dart';
 import 'package:portfolio/presentation/projects/projects_screen.dart';
+import 'package:portfolio/presentation/resume/resume_screen.dart';
 
 import 'app_constants.dart';
 
@@ -23,8 +23,8 @@ final appRouter = GoRouter(
             pageBuilder: (context, state) =>  const NoTransitionPage(child: HomeScreen()),
           ),
           GoRoute(
-            path: RoutesName.about,
-            pageBuilder: (context, state) =>  const NoTransitionPage(child: AboutScreen()),
+            path: RoutesName.resume,
+            pageBuilder: (context, state) =>  const NoTransitionPage(child: ResumeScreen()),
           ),
           GoRoute(
             path: RoutesName.projects,

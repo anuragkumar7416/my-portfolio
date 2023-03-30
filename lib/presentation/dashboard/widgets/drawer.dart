@@ -22,7 +22,7 @@ class NavigationDrawerWidget extends StatefulWidget {
 class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
   final List<String> _listOfNavigationItem = [
     'Home',
-    'About',
+    'Resume',
     'Projects',
     'Contact'
   ];
@@ -106,7 +106,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
     if (index == 0) {
       GoRouter.of(context).go(RoutesName.home);
     } else if (index == 1) {
-      GoRouter.of(context).go(RoutesName.about);
+      GoRouter.of(context).go(RoutesName.resume);
     } else if (index == 2) {
       GoRouter.of(context).go(RoutesName.projects);
     } else if (index == 3) {

@@ -44,7 +44,7 @@ class Fonts {
 class RoutesName {
   // ignore: non_constant_identifier_names
   static const String  home = '/home';
-  static const String  about = '/about';
+  static const String  resume = '/resume';
   static const String  projects = '/projects';
   static const String  contact = '/contact';
 
