@@ -12,6 +12,7 @@ class CLR {
   static const secondaryTextColor = Color(0xff999999);
   static const footerColor = Color(0xff132238);
   static const orangeShade = Color(0xfff05d23);
+  static const greyShade = Color(0x99000000);
 
 
 }

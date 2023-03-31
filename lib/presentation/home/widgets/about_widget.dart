@@ -63,6 +63,7 @@ class AboutWidget extends StatelessWidget {
           NameText(),
           AboutText(),
           MoreWidget(),
+
         ],
       ),
     );

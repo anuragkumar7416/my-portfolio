@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/common_functions/url_launcher.dart';
 
+import '../../../app_constants.dart';
+
 class SocialAccountIcon extends StatelessWidget {
   final String imagePath;
   final String url;
@@ -9,10 +11,10 @@ class SocialAccountIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(5.0),
       child: IconButton(
         onPressed: ()=> UrlLauncher.launchWeb(url),
-          icon: Image.asset(imagePath,width: 20,height: 20,)),
+          icon: Image.asset(imagePath,width: 20,height: 20)),
     );
 
   }

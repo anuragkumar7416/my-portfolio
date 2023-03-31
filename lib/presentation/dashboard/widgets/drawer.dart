@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:portfolio/extensions/breakpoints_extension.dart';
 import 'package:portfolio/extensions/typography_extension.dart';
 import 'package:portfolio/presentation/dashboard/cubit/dashboard_cubit.dart';
 import 'package:portfolio/presentation/dashboard/widgets/copyright_widget.dart';
@@ -29,10 +30,12 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
 
   @override
   Widget build(BuildContext context) {
+    bool maxWidth = MediaQuery.of(context).size.width > 1550;
+
     return Drawer(
         backgroundColor: CLR.drawerBackgroundColor,
         elevation: 0,
-        width: 476.25,
+        width: maxWidth ? (476.25) : 310,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           mainAxisSize: MainAxisSize.max,

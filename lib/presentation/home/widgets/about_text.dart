@@ -11,13 +11,13 @@ class AboutText extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 24),
       child: Text(
-        'I am A Blogger Far far away, behind the word mountains, far from the countries Vokalia and\nConsonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast\n of the Semantics, a large language ocean.',
+        ' I\'m a developer with 2 years of experience in Flutter and Dart, and I also have knowledge in Android, Java, Firebase,\n and iOS development. I have a strong passion for programming and love using my skills to create innovative\n solutions. When I\'m not coding, I enjoy exploring new places, trying different types of cuisine, and listening to\n music. My diverse interests help me stay motivated and creative both inside and outside of work.',
         style: context.secondaryTitleMedium!.copyWith(
             color: CLR.footerColor.withOpacity(0.7),
             fontWeight: FontWeight.w900,
             letterSpacing: 1,
             height: 2),
-        textAlign: TextAlign.center,
+        textAlign: TextAlign.center,overflow: TextOverflow.ellipsis,
       ),
     );
   }

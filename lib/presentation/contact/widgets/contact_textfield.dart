@@ -5,7 +5,10 @@ import '../../../app_constants.dart';
 class ContactTextField extends StatelessWidget {
   final String hintText;
   final int maxLines;
-  const ContactTextField({Key? key, required this.hintText, required this.maxLines}) : super(key: key);
+
+  const ContactTextField(
+      {Key? key, required this.hintText, required this.maxLines})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,24 +19,17 @@ class ContactTextField extends StatelessWidget {
         maxLines: maxLines,
         decoration: InputDecoration(
           hintText: hintText,
-
-          border:const OutlineInputBorder(
-            borderSide:BorderSide(color: CLR.secondaryTextColor,width: 0.1),
+          focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black, width: 1.0),
             borderRadius: BorderRadius.zero,
-
           ),
-          focusedBorder:const OutlineInputBorder(
-            borderSide:BorderSide(color: Colors.black,width: 0.1),
+          enabledBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: CLR.secondaryTextColor, width: 1.0),
             borderRadius: BorderRadius.zero,
-
-          ) ,
-
+          ),
           fillColor: Colors.white,
           filled: true,
-
-
         ),
-
       ),
     );
   }

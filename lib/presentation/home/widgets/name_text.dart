@@ -8,7 +8,19 @@ class NameText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 24),
-      child: Text('Anurag Kumar',style: context.headlineLarge!.copyWith(fontWeight: FontWeight.w900,fontSize: 40),),
+      child: LayoutBuilder(
+        builder: (context,dimens) {
+          if(dimens.maxWidth>850){
+            return Text('Anurag Kumar',style: context.headlineLarge!.copyWith(fontWeight: FontWeight.w900,fontSize: 40),);
+
+          }else{
+            return Text('Anurag Kumar',style: context.headlineLarge!.copyWith(fontWeight: FontWeight.w900,fontSize: 30),);
+
+          }
+
+
+        }
+      ),
     );
   }
 }

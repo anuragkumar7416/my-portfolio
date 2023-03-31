@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -42,19 +41,25 @@ class _DashboardScreenState extends State<DashboardScreen> {
       create: (context) => DashboardCubit(),
       child: BlocBuilder<DashboardCubit, DashboardState>(
         builder: (context, state) {
-          return LayoutBuilder(
-            builder: (context, dimens) {
-              return Scaffold(
-                backgroundColor: Colors.white,
-                body: Row(
-                  children: [
-                    NavigationDrawerWidget(currentIndex: getCurrentIndex(),),
+          return Scaffold(
+            backgroundColor: Colors.white,
+            body: LayoutBuilder(
+              builder: (context,dimens) {
+                if(dimens.maxWidth>1210){
+                  return Row(
+                    children: [
+                      NavigationDrawerWidget(currentIndex: getCurrentIndex(),),
 
-                    Expanded(child: widget.child),
-                  ],
-                ),
-              );
-            },
+                      Expanded(child: widget.child),
+                    ],
+                  );
+                }else{
+                  return Expanded(child: widget.child);
+
+                }
+
+              }
+            ),
           );
         },
       ),
