@@ -7,6 +7,6 @@ class MoreWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Text('More About Me >',style: context.secondaryTitleMedium!.copyWith(color: const Color(0xffb3b3b3),decoration: TextDecoration.underline,fontWeight: FontWeight.w400),);
+    return Text('More About Me >',style: context.secondaryTitleMedium!.copyWith(color:  Colors.blueGrey.shade700,decoration: TextDecoration.underline,fontWeight: FontWeight.w400),);
   }
 }

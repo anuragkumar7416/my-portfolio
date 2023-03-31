@@ -9,6 +9,6 @@ class HelloText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Text('Hello I\'m',style: context.headlineSmall!.copyWith(color: CLR.secondaryTextColor),);
+    return Text('Hello I\'m',style: context.headlineSmall!.copyWith(color: CLR.footerColor.withOpacity(0.8)),);
   }
 }

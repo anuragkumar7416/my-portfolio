@@ -13,7 +13,7 @@ class AboutText extends StatelessWidget {
       child: Text(
         'I am A Blogger Far far away, behind the word mountains, far from the countries Vokalia and\nConsonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast\n of the Semantics, a large language ocean.',
         style: context.secondaryTitleMedium!.copyWith(
-            color: CLR.secondaryTextColor,
+            color: CLR.footerColor.withOpacity(0.7),
             fontWeight: FontWeight.w900,
             letterSpacing: 1,
             height: 2),

@@ -28,10 +28,10 @@ class _ContactScreenState extends State<ContactScreen> {
             child: Column(
               children: [
                 const PageHeader(heading: 'Contact Information'),
-                ContactRow(),
+                const ContactRow(),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: const [
                     MapView(),
                     ContactForm()
                   ],
@@ -42,7 +42,7 @@ class _ContactScreenState extends State<ContactScreen> {
 
 
           //Spacer(flex: 1,),
-          Footer(),
+          const Footer(),
 
 
         ],

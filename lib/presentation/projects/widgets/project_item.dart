@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import '../../../classes/project.dart';
-import 'project_desc.dart';
 import 'project_icon.dart';
 import 'project_name.dart';
 
@@ -27,7 +25,7 @@ class ProjectItem extends StatelessWidget {
             const SizedBox(height: 20,),
             ProjectName(name: project.name,isDark: project.isDark,),
             const SizedBox(height: 20,),
-            ProjectDesc(desc: project.desc,isDark: project.isDark,),
+
 
           ],
         ),

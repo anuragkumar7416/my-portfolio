@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/presentation/home/widgets/about_text.dart';
-import 'package:portfolio/presentation/home/widgets/circular_photo.dart';
-import 'package:portfolio/presentation/home/widgets/hello_text.dart';
-import 'package:portfolio/presentation/home/widgets/more_widget.dart';
-import 'package:portfolio/presentation/home/widgets/name_text.dart';
+import 'package:portfolio/presentation/home/widgets/about_widget.dart';
+
 import 'package:portfolio/presentation/projects/widgets/projects_widget.dart';
 import '../footer/footer_screen.dart';
 
@@ -20,29 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Stack(
-            children: [
-              Image.network(
-                  'https://themewagon.github.io/elen/images/bg_1.jpg'),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                decoration: BoxDecoration(
-                  color: Colors.white60.withOpacity(0.7),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    CircularPhoto(),
-                    HelloText(),
-                    NameText(),
-                    AboutText(),
-                    MoreWidget(),
-                  ],
-                ),
-              )
-            ],
-          ),
+          AboutWidget(),
           ProjectsWidget(),
           const Footer(),
         ],

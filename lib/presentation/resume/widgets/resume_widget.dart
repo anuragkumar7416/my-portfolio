@@ -19,7 +19,7 @@ class ResumeWidget extends StatelessWidget {
           ),
           TimelineWidget(
               timelineData: TimelineData('2022-2024', 'SDE-I', 'Mobcoder',
-                  'I have delivered two projects fedora MBanking & MobHRM which has 100+ user base.\nWorked on flutter web  ')),
+                  'I have delivered two projects fedora MBanking & MobHRM which has 100+ user base.\nWorked on Flutter web\nTech Stack:- Dart,Flutter,Android and Java')),
           TimelineWidget(
               timelineData: TimelineData(
                   '2021-2022',

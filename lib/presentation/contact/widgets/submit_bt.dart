@@ -16,6 +16,9 @@ class _SubmitBtState extends State<SubmitBt> {
     return ElevatedButton(
         onPressed: () {},
         style: ButtonStyle(
+          elevation: MaterialStateProperty.resolveWith<double>((Set<MaterialState> states) {
+            return 0;
+          }),
           foregroundColor: MaterialStateProperty.resolveWith<Color?>(
               (Set<MaterialState> states) {
             if (states.contains(MaterialState.hovered)) {

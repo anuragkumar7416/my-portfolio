@@ -18,10 +18,10 @@ class _SocialAccountsWidgetState extends State<SocialAccountsWidget> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: const [
-          SocialAccountIcon(imagePath: ImagePaths.facebookIcon,),
-          SocialAccountIcon(imagePath: ImagePaths.twitterIcon,),
-          SocialAccountIcon(imagePath: ImagePaths.instagramIcon,),
-          SocialAccountIcon(imagePath: ImagePaths.linkedinIcon,),
+          SocialAccountIcon(imagePath: ImagePaths.mediumIcon,url: 'https://medium.com/@anuragkumar7416',),
+          SocialAccountIcon(imagePath: ImagePaths.twitterIcon,url: 'https://medium.com/@anuragkumar7416'),
+          SocialAccountIcon(imagePath: ImagePaths.githubIcon,url: 'https://github.com/anuragkumar7416'),
+          SocialAccountIcon(imagePath: ImagePaths.linkedinIcon,url: 'https://www.linkedin.com/in/anurag-kumar7416/'),
         ],
       ),
     );
