@@ -11,17 +11,19 @@ class InfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  RichText(
-      text: TextSpan(
-        text: '$keyText : ',
-        style: GoogleFonts.montserrat(color: CLR.secondaryTextColor,fontSize: 15,height: 2,),
-        children:  <TextSpan>[
-          TextSpan(
-              text: value,
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,)),
-        ],
+    return  Flexible(
+      child: RichText(
+        text: TextSpan(
+          text: '$keyText : ',
+          style: GoogleFonts.montserrat(color: CLR.secondaryTextColor,fontSize: 15,height: 2,),
+          children:  <TextSpan>[
+            TextSpan(
+                text: value,
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,)),
+          ],
+        ),
       ),
     );
   }

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Project {
   final String name;
   final String desc;
@@ -6,8 +8,8 @@ class Project {
   final bool onIos;
   final bool onWeb;
   final bool onAndroid;
-  final bool isDark;
+  final Color hoverColor;
 
-  Project(this.name, this.desc, this.icon, this.backgroundImage,this.isDark,
+  Project(this.name, this.desc, this.icon, this.backgroundImage,this.hoverColor,
       {this.onIos = false, this.onWeb = false, this.onAndroid = false});
 }

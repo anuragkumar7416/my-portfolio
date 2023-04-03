@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:portfolio/cubit/app_cubit.dart';
 import 'package:portfolio/router.dart';
 
 void main() {
@@ -10,14 +12,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'My Portfolio',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      routerConfig: appRouter,
+    return BlocProvider(
+      create: (context) => AppCubit(),
+      child: MaterialApp.router(
+        title: 'My Portfolio',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        routerConfig: appRouter,
 
+      ),
     );
   }
 }

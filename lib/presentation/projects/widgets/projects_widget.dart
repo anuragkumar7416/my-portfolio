@@ -15,13 +15,13 @@ class ProjectsWidget extends StatelessWidget {
         'Mob\'s HRM, Mobcoder employees\'digital\ncompanion, is an\nin-house app of Mobcoder\nTechnologies. The app\nlets company employees\norder food and track\ntheir Mobcoder life.',
         ImagePaths.hrmIcon,
         ImagePaths.backgroundHrm,
-        false),
+        Colors.indigo.shade300),
     Project(
         'Fedora MBanking',
         'Fedora India introduces official\nintegrated mobile banking app\nwhich consists existing mobile banking\napp, M Passbook app & Door step\nBanking app.',
         ImagePaths.fedoraIcon,
         ImagePaths.backgroundFedora,
-        true),
+        Colors.amber.shade300),
   ];
 
   @override

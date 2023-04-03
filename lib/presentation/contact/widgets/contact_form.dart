@@ -12,23 +12,42 @@ class ContactForm extends StatefulWidget {
 class _ContactFormState extends State<ContactForm> {
   @override
   Widget build(BuildContext context) {
+    double maxWidth = MediaQuery.of(context).size.width;
 
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.only(left: 30,right: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
-            ContactTextField(hintText: 'Your Name',maxLines: 1,),
-            ContactTextField(hintText: 'Your Email',maxLines: 1),
-            ContactTextField(hintText: 'Subject',maxLines: 1),
-            ContactTextField(hintText: 'Your Message',maxLines: 7),
-            SubmitBt(),
-          ],
+    if(maxWidth>850){
+      return Expanded(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: const [
+              ContactTextField(hintText: 'Your Name',maxLines: 1,),
+              ContactTextField(hintText: 'Your Email',maxLines: 1),
+              ContactTextField(hintText: 'Subject',maxLines: 1),
+              ContactTextField(hintText: 'Your Message',maxLines: 7),
+              SubmitBt(),
+            ],
 
+          ),
         ),
-      ),
-    );
+      );
+
+    }else{
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: const [
+          ContactTextField(hintText: 'Your Name',maxLines: 1,),
+          ContactTextField(hintText: 'Your Email',maxLines: 1),
+          ContactTextField(hintText: 'Subject',maxLines: 1),
+          ContactTextField(hintText: 'Your Message',maxLines: 7),
+          SubmitBt(),
+        ],
+
+      );
+    }
+
+
   }
 }

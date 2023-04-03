@@ -19,10 +19,11 @@ class _MapViewState extends State<MapView> {
 
   @override
   Widget build(BuildContext context) {
+    double maxWidth = MediaQuery.of(context).size.width;
 
-    return  Container(
-      width: 540,
-      height: 400,
+    return SizedBox(
+      width: maxWidth>1360?540:330,
+      height: maxWidth>1000?400:300,
       child: GoogleMap(
         onMapCreated: _onMapCreated,
         initialCameraPosition: CameraPosition(

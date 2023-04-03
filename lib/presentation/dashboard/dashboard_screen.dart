@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:portfolio/presentation/dashboard/widgets/drawer.dart';
-
+import 'package:portfolio/presentation/dashboard/widgets/magnetic_mouse_region.dart';
 
 import '../../app_constants.dart';
 import 'cubit/dashboard_cubit.dart';
@@ -19,8 +19,6 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-
-
   int getCurrentIndex() {
     switch (widget.location) {
       case RoutesName.resume:
@@ -43,23 +41,25 @@ class _DashboardScreenState extends State<DashboardScreen> {
         builder: (context, state) {
           return Scaffold(
             backgroundColor: Colors.white,
-            body: LayoutBuilder(
-              builder: (context,dimens) {
-                if(dimens.maxWidth>1210){
-                  return Row(
-                    children: [
-                      NavigationDrawerWidget(currentIndex: getCurrentIndex(),),
-
-                      Expanded(child: widget.child),
-                    ],
-                  );
-                }else{
-                  return Expanded(child: widget.child);
-
-                }
-
+            body: LayoutBuilder(builder: (context, dimens) {
+              if (dimens.maxWidth > 1210) {
+                return Row(
+                  children: [
+                    NavigationDrawerWidget(
+                      currentIndex: getCurrentIndex(),
+                    ),
+                    Expanded(
+                        child: MagneticMouseRegion(
+                      child: widget.child,
+                    )),
+                  ],
+                );
+              } else {
+                return MagneticMouseRegion(
+                  child: widget.child,
+                );
               }
-            ),
+            }),
           );
         },
       ),

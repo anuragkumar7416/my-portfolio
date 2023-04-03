@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/common_functions/url_launcher.dart';
 
-import '../../../app_constants.dart';
-
 class SocialAccountIcon extends StatelessWidget {
   final String imagePath;
   final String url;

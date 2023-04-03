@@ -6,8 +6,6 @@ import 'package:portfolio/presentation/contact/widgets/map_view.dart';
 
 import '../footer/footer_screen.dart';
 
-
-
 class ContactScreen extends StatefulWidget {
   const ContactScreen({Key? key}) : super(key: key);
 
@@ -18,36 +16,48 @@ class ContactScreen extends StatefulWidget {
 class _ContactScreenState extends State<ContactScreen> {
   @override
   Widget build(BuildContext context) {
+    double maxWidth = MediaQuery.of(context).size.width;
     return SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(90.0),
-            child: Column(
-              children: [
-                const PageHeader(heading: 'Contact Information'),
-                const ContactRow(),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    MapView(),
-                    ContactForm()
-                  ],
-                ),
-              ],
+      child: Padding(
+        padding: const EdgeInsets.only(top: 90),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Align(
+                alignment: Alignment.center,
+                child: PageHeader(heading: 'Contact Information')),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(90, 0, 90, 90),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const ContactRow(),
+                  maxWidth > 850
+                      ? Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            MapView(),
+                            ContactForm(),
+                          ],
+                        )
+                      : Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            SizedBox(height: 600, child: ContactForm()),
+                            MapView(),
+                          ],
+                        ),
+                ],
+              ),
             ),
-          ),
-
-
-          //Spacer(flex: 1,),
-          const Footer(),
-
-
-        ],
+            const Footer(),
+          ],
+        ),
       ),
     );
   }
 }
-
