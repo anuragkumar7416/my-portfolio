@@ -8,13 +8,12 @@ class CircularPhoto extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context,dimens) {
-        bool isCheck = dimens.maxWidth>850;
         return Container(
-          height: isCheck?200:100,
-          width: isCheck?200:100,
+          height: 200,
+          width: 200,
           margin: const EdgeInsets.only(top: 24,bottom: 24),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(isCheck?100:50),
+            borderRadius: BorderRadius.circular(100),
 
             image: const DecorationImage(image: AssetImage(ImagePaths.myPicture,),fit: BoxFit.cover)
           ),

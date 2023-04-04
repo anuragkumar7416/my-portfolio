@@ -6,7 +6,7 @@ import 'circular_photo.dart';
 import 'hello_text.dart';
 import 'more_widget.dart';
 import 'name_text.dart';
-import 'parallex_effect.dart';
+import 'parallax_effect.dart';
 
 class AboutWidget extends StatelessWidget {
   final GlobalKey _backgroundImageKey = GlobalKey();
@@ -22,12 +22,6 @@ class AboutWidget extends StatelessWidget {
           _buildParallaxBackground(context),
           //_buildGradient(),
           _buildBg(context)
-
-
-
-
-
-
         ],
       ),
     );
@@ -48,13 +42,11 @@ class AboutWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildBg(BuildContext context){
-    return  Container(
+  Widget _buildBg(BuildContext context) {
+    return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      decoration: BoxDecoration(
-        //color: Colors.white60.withOpacity(0.7),
-      ),
+      margin: const EdgeInsets.only(bottom: 24,left: 40,right: 40),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: const [
@@ -63,13 +55,10 @@ class AboutWidget extends StatelessWidget {
           NameText(),
           AboutText(),
           MoreWidget(),
-
         ],
       ),
     );
   }
-
-
 
   Widget _buildParallaxBackground(BuildContext context) {
     return Flow(

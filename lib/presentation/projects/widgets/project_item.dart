@@ -24,8 +24,8 @@ class ProjectItem extends StatelessWidget {
             BlocProvider.of<AppCubit>(context).onHoverProject(false,project.hoverColor);
           },
           child: Container(
-            width: 585,
-            height: 487,
+            width: 560,
+            height: 490,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
                 image: DecorationImage(
@@ -33,7 +33,7 @@ class ProjectItem extends StatelessWidget {
                     fit: BoxFit.fill)
             ),
             child: Padding(
-              padding: const EdgeInsets.all(30.0),
+              padding: const EdgeInsets.all(40.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

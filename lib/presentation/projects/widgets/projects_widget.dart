@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/app_constants.dart';
+import 'package:portfolio/extensions/breakpoints_extension.dart';
 
 import '../../../classes/project.dart';
 import '../../../commonWidgets/page_header.dart';
@@ -34,20 +35,39 @@ class ProjectsWidget extends StatelessWidget {
         const PageHeader(heading: 'Projects'),
         Padding(
           padding: const EdgeInsets.all(50.0),
-          child: GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: listOfProject.length,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 30,
-                  mainAxisSpacing: 30,
-                  mainAxisExtent: 400),
-              itemBuilder: (context, index) {
-                return ProjectItem(
-                  project: listOfProject[index],
-                );
-              }),
+          child: LayoutBuilder(
+            builder: (context,dimens) {
+              if(dimens.isTablet){
+                return GridView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: listOfProject.length,
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 30,
+                        mainAxisSpacing: 30,
+                        mainAxisExtent: 400),
+                    itemBuilder: (context, index) {
+                      return ProjectItem(
+                        project: listOfProject[index],
+                      );
+                    });
+
+              }else{
+                return ListView.separated(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: listOfProject.length,
+                    itemBuilder: (context, index) {
+                      return ProjectItem(
+                        project: listOfProject[index],
+                      );
+                    }, separatorBuilder: (BuildContext context, int index) { return const SizedBox(height: 20,); },);
+
+              }
+
+            }
+          ),
         ),
       ],
     );

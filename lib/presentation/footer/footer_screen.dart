@@ -3,7 +3,6 @@ import 'package:portfolio/extensions/breakpoints_extension.dart';
 import 'package:portfolio/presentation/dashboard/widgets/copyright_widget.dart';
 import 'package:portfolio/presentation/footer/widgets/links_list.dart';
 import 'package:portfolio/presentation/footer/widgets/questions_widget.dart';
-
 import '../../app_constants.dart';
 
 
@@ -21,7 +20,7 @@ class _FooterState extends State<Footer> {
     return LayoutBuilder(
       builder: (context,dimens) {
         return Container(
-          height: dimens.isTablet? 439:839,
+          height: dimens.isTablet? 439:851,
           width: MediaQuery.of(context).size.width,
             padding: const EdgeInsets.all(84),
             color: CLR.footerColor,
