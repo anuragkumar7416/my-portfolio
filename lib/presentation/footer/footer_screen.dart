@@ -20,7 +20,7 @@ class _FooterState extends State<Footer> {
     return LayoutBuilder(
       builder: (context,dimens) {
         return Container(
-          height: dimens.isTablet? 439:851,
+          height: dimens.isTablet? 439:870,
           width: MediaQuery.of(context).size.width,
             padding: const EdgeInsets.all(84),
             color: CLR.footerColor,

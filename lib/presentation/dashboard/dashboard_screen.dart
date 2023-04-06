@@ -35,12 +35,22 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double maxWidth = MediaQuery.of(context).size.width;
     return BlocProvider(
       create: (context) => DashboardCubit(),
       child: BlocBuilder<DashboardCubit, DashboardState>(
         builder: (context, state) {
           return Scaffold(
             backgroundColor: Colors.white,
+            appBar:  maxWidth > 1210?null:AppBar(backgroundColor: Colors.white,
+              foregroundColor: Colors.black,
+
+            ),
+            drawer: maxWidth > 1210
+                ? null
+                : NavigationDrawerWidget(
+                    currentIndex: getCurrentIndex(),
+                  ),
             body: LayoutBuilder(builder: (context, dimens) {
               if (dimens.maxWidth > 1210) {
                 return Row(

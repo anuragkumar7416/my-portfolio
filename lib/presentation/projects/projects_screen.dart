@@ -23,9 +23,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
           ProjectsWidget(),
 
 
-          const Footer(),
-        ],
-      ),
-    );
+        const Footer(),
+      ],
+    ));
   }
 }

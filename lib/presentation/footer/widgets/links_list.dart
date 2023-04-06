@@ -38,6 +38,7 @@ class LinkList extends StatelessWidget {
           const SizedBox(height: 20,),
           Expanded(
             child: ListView.separated(
+              physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: ()=>_handleOnTapLinkItem(index, context),
