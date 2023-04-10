@@ -13,7 +13,7 @@ class ResumeWidget extends StatelessWidget {
       padding: const EdgeInsets.all(50),
       child: Column(
         children: [
-          PhaseTimeline(
+          const PhaseTimeline(
             phase: 'Work Experience',
             icon: Icons.work_outline_sharp,
           ),

@@ -3,6 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 extension TypographyUtils on BuildContext {
+
+
+
   ThemeData get theme => Theme.of(this);
   TextTheme get textTheme => GoogleFonts.poppinsTextTheme(theme.textTheme); // Modify this line
   TextTheme get secondaryTextTheme => GoogleFonts.montserratTextTheme(theme.textTheme); // Modify this line

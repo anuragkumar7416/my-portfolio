@@ -39,15 +39,12 @@ class TimelineWidget extends StatelessWidget {
           ],
         ),
       ),
-      startChild: Container(
-
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            TimelineHeader(heading: timelineData.period),
-          ],
-        ),
+      startChild: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          TimelineHeader(heading: timelineData.period),
+        ],
       ),
     );
   }

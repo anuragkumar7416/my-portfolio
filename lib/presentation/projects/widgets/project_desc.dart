@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../app_constants.dart';
+
+
+
+
 class ProjectDesc extends StatelessWidget {
   final String desc;
   final bool isDark;
@@ -9,6 +14,6 @@ class ProjectDesc extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(desc,style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.normal,color: isDark?Colors.black:Colors.white),textAlign: TextAlign.start,);
+    return Text(desc,style: GoogleFonts.montserrat(fontSize: 15,fontWeight: FontWeight.w500,color: CLR.secondaryTextColor,height: 2),textAlign: TextAlign.start,);
   }
 }

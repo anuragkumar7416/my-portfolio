@@ -9,6 +9,6 @@ class ProjectName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Text(name,style: GoogleFonts.poppins(fontSize: 28,fontWeight: FontWeight.w600,color: isDark?Colors.black:Colors.white),);
+    return Text(name,style: GoogleFonts.poppins(fontSize: 22,fontWeight: FontWeight.w700,color: isDark?Colors.black:Colors.white),);
   }
 }
