@@ -11,7 +11,7 @@ class MapView extends StatefulWidget {
 class _MapViewState extends State<MapView> {
   late GoogleMapController myController;
 
-  final LatLng _center = const LatLng(45.521563, -122.677433);
+  final LatLng _center = const LatLng(28.6139, 77.2090);
 
   void _onMapCreated(GoogleMapController controller) {
     myController = controller;

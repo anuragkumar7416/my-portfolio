@@ -11,6 +11,7 @@ class SocialAccountIcon extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(5.0),
       child: IconButton(
+        padding: EdgeInsets.zero,
         onPressed: ()=> UrlLauncher.launchWeb(url),
           icon: Image.asset(imagePath,width: 20,height: 20)),
     );

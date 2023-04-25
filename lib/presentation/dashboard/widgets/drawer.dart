@@ -42,7 +42,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(left: 45, top: 45, right: 45),
+                padding: const EdgeInsets.only(left: 30, top: 45, right: 30),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [

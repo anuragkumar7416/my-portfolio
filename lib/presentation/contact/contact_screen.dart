@@ -28,7 +28,7 @@ class _ContactScreenState extends State<ContactScreen> {
                 alignment: Alignment.center,
                 child: PageHeader(heading: 'Contact Information')),
             Padding(
-              padding: const EdgeInsets.fromLTRB(90, 0, 90, 90),
+              padding: maxWidth>850? const EdgeInsets.fromLTRB(90, 0, 90, 90):  const EdgeInsets.fromLTRB(30, 0, 30, 90),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,7 +47,8 @@ class _ContactScreenState extends State<ContactScreen> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: const [
-                            SizedBox(height: 600, child: ContactForm()),
+                            SizedBox(
+                                height: 600, child: ContactForm()),
                             MapView(),
                           ],
                         ),

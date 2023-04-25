@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../app_constants.dart';
 
 class SubmitBt extends StatefulWidget {
-  const SubmitBt({Key? key}) : super(key: key);
+  final GlobalKey<FormState> formKey;
+  final Function() onPress;
+  const SubmitBt({Key? key, required this.formKey, required this.onPress}) : super(key: key);
 
   @override
   State<SubmitBt> createState() => _SubmitBtState();
@@ -14,7 +16,7 @@ class _SubmitBtState extends State<SubmitBt> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: () {},
+        onPressed: widget.onPress,
         style: ButtonStyle(
           elevation: MaterialStateProperty.resolveWith<double>((Set<MaterialState> states) {
             return 0;

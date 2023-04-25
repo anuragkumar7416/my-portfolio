@@ -14,14 +14,25 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    double maxWidth = MediaQuery.of(context).size.width;
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(
-              height:800,
-          width: MediaQuery.of(context).size.width,
-          child: AboutWidget()),
+          LayoutBuilder(
+            builder: (context,dimens) {
+              if(dimens.maxWidth>425){
+                return SizedBox(
+                    height:800,
+                    width: MediaQuery.of(context).size.width,
+                    child: AboutWidget());
+              }else{
+                return SizedBox(
+                    height:600,
+                    width: MediaQuery.of(context).size.width,
+                    child: AboutWidget());
+              }
+
+            }
+          ),
           ProjectsWidget(),
           const Footer(),
         ],
