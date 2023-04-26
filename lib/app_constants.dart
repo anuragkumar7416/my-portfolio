@@ -30,6 +30,7 @@ class ImagePaths {
   static const String backgroundHrm = '$root/img_hrm.png';
   static const String aboutBackground = '$root/img_background.png';
   static const String backgroundFedora = '$root/img_fedora.png';
+  static const String redMarker = '$root/ic_marker.png';
 
 
 }

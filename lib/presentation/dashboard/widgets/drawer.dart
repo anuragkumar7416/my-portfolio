@@ -108,12 +108,16 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
   void _handleOnTapDrawerItem(int index, context) {
     if (index == 0) {
       GoRouter.of(context).go(RoutesName.home);
+      GoRouter.of(context).pop();
     } else if (index == 1) {
       GoRouter.of(context).go(RoutesName.resume);
+      GoRouter.of(context).pop();
     } else if (index == 2) {
       GoRouter.of(context).go(RoutesName.projects);
+      GoRouter.of(context).pop();
     } else if (index == 3) {
       GoRouter.of(context).go(RoutesName.contact);
+      GoRouter.of(context).pop();
     }
   }
 }
