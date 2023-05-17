@@ -70,25 +70,29 @@ class _ContactFormState extends State<ContactForm> {
           ),
           SubmitBt(
             formKey: _formKey,
-            onPress: onSubmitClick,
+            onPress: ()=> onSubmitClick(context),
           ),
         ],
       ),
     );
   }
 
-  void onSubmitClick() async {
+  void onSubmitClick(context) async {
     if (_formKey.currentState!.validate()) {
       PostMessage message = PostMessage(
           name: nameController.text,
           email: emailController.text,
           subject: subjectController.text,
           message: messageController.text);
-      var response = await postMessage(message);
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(response)),
+      var  response = await postMessage(message);
+      const snackBar = SnackBar(
+        content: Text("Submitted Form"),
+        backgroundColor: Colors.green,
       );
-      if (response == "Submitted Form") {
+
+
+      if (response == "Success") {
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
         nameController.clear();
         emailController.clear();
         subjectController.clear();
@@ -118,48 +122,15 @@ class _ContactFormState extends State<ContactForm> {
 
   Future<String> postMessage(PostMessage message) async {
     final dio = Dio();
-    dio.options.headers = {
-      'Content-Type': 'application/json',
-      "Accept": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      // Required for CORS support to work
-      "Access-Control-Allow-Credentials": true,
-      // Required for cookies, authorization headers with HTTPS
-      "Access-Control-Allow-Headers":
-          "Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale",
-      "Access-Control-Allow-Methods": "POST, OPTIONS"
-    };
 
-    final response = await dio.post(
-        'https://script.google.com/macros/s/AKfycby3UNvApacW2-9JV8DgUUC4DhLwdUGkcms6mbCGMiRks9iYdc7SLFP7IiBC1dMe-cLsVw/exec',
-        data: jsonEncode(message.toJson()),
-        options: Options(
-            followRedirects: false,
-            headers: {
-              'Content-Type': 'application/json',
-              "Accept": "application/json",
-              "Access-Control-Allow-Origin": "*",
-              // Required for CORS support to work
-              "Access-Control-Allow-Credentials": true,
-              // Required for cookies, authorization headers with HTTPS
-              "Access-Control-Allow-Headers":
-              "Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale",
-              "Access-Control-Allow-Methods": "PUT, GET, POST, DELETE, OPTIONS"
-            },
-            validateStatus: (status) {
-              return status! < 500;
-            }));
+    final response = await dio.get(
+      'https://script.google.com/macros/s/AKfycbwPjAq--vGhbuv1mkKsqxEIyLF3YEptExmq0p0BF7zqIFV2g4XcXISx4OcpizKVtPhaWA/exec',
+      queryParameters: message.toJson(),
+    );
 
     if (response.statusCode == 200) {
-      // If the server did return a 200 OK response,
-      // then parse the JSON.
       return response.data;
-    } else if (response.statusCode == 302) {
-      return "Submitted Form";
     } else {
-      // If the server did not return a 200 OK response,
-      // then throw an exception.
-
       throw Exception('Failed to post Message');
     }
   }

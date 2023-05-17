@@ -30,50 +30,53 @@ class ProjectsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Column(
-      children: [
-        const SizedBox(
-          height: 50,
-        ),
-        const PageHeader(heading: 'Projects'),
-        Padding(
-          padding: const EdgeInsets.all(50.0),
-          child: LayoutBuilder(builder: (context, dimens) {
-            if (dimens.isTablet) {
-              return GridView.builder(
+    return Container(
+      color: Colors.white,
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 50,
+          ),
+          const PageHeader(heading: 'Projects'),
+          Padding(
+            padding: const EdgeInsets.all(50.0),
+            child: LayoutBuilder(builder: (context, dimens) {
+              if (dimens.isTablet) {
+                return GridView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: listOfProject.length,
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 30,
+                        mainAxisSpacing: 30,
+                        mainAxisExtent: 700),
+                    itemBuilder: (context, index) {
+                      return ProjectItem(
+                        project: listOfProject[index],
+                      );
+                    });
+              } else {
+                return ListView.separated(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: listOfProject.length,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 30,
-                      mainAxisSpacing: 30,
-                      mainAxisExtent: 700),
                   itemBuilder: (context, index) {
                     return ProjectItem(
                       project: listOfProject[index],
                     );
-                  });
-            } else {
-              return ListView.separated(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: listOfProject.length,
-                itemBuilder: (context, index) {
-                  return ProjectItem(
-                    project: listOfProject[index],
-                  );
-                },
-                separatorBuilder: (BuildContext context, int index) {
-                  return const SizedBox(
-                    height: 40,
-                  );
-                },
-              );
-            }
-          }),
-        ),
-      ],
+                  },
+                  separatorBuilder: (BuildContext context, int index) {
+                    return const SizedBox(
+                      height: 40,
+                    );
+                  },
+                );
+              }
+            }),
+          ),
+        ],
+      ),
     );
   }
 }

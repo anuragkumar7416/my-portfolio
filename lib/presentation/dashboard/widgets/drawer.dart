@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:portfolio/extensions/breakpoints_extension.dart';
 import 'package:portfolio/extensions/typography_extension.dart';
-import 'package:portfolio/presentation/dashboard/cubit/dashboard_cubit.dart';
 import 'package:portfolio/presentation/dashboard/widgets/copyright_widget.dart';
 import 'package:portfolio/presentation/dashboard/widgets/social_accounts_widget.dart';
 
@@ -108,16 +105,16 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
   void _handleOnTapDrawerItem(int index, context) {
     if (index == 0) {
       GoRouter.of(context).go(RoutesName.home);
-      GoRouter.of(context).pop();
+
     } else if (index == 1) {
       GoRouter.of(context).go(RoutesName.resume);
-      GoRouter.of(context).pop();
+
     } else if (index == 2) {
       GoRouter.of(context).go(RoutesName.projects);
-      GoRouter.of(context).pop();
+
     } else if (index == 3) {
       GoRouter.of(context).go(RoutesName.contact);
-      GoRouter.of(context).pop();
+
     }
   }
 }

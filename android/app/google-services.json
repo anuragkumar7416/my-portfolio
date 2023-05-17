@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "459811806341",
+    "project_id": "anuragkumar-287b4",
+    "storage_bucket": "anuragkumar-287b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459811806341:android:9503cbcf98717e0e1cddec",
+        "android_client_info": {
+          "package_name": "com.example.portfolio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459811806341-ltabtp9vbfhr0vo5d83nts7k4dbo4tij.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuy_8FUm1UGNsnIVHj6GtvzKBZk3t8LVk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459811806341-ltabtp9vbfhr0vo5d83nts7k4dbo4tij.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -24,5 +24,8 @@ class PostMessage {
     map['message'] = message;
     return map;
   }
+  String toParams() =>
+      "?name=$name&email=$email&subject=$subject"
+          "&message=$message";
 
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/projects/widgets/projects_widget.dart';
+import '../../services/analytics_service.dart';
 import '../footer/footer_screen.dart';
 
 class ProjectsScreen extends StatefulWidget {
@@ -10,6 +11,13 @@ class ProjectsScreen extends StatefulWidget {
 }
 
 class _ProjectsScreenState extends State<ProjectsScreen> {
+  @override
+  void initState() {
+    AnalyticsService.logEvent("openProjectPage");
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

@@ -4,6 +4,7 @@ import 'package:portfolio/presentation/contact/widgets/contact_form.dart';
 import 'package:portfolio/presentation/contact/widgets/contact_row.dart';
 import 'package:portfolio/presentation/contact/widgets/map_view.dart';
 
+import '../../services/analytics_service.dart';
 import '../footer/footer_screen.dart';
 
 class ContactScreen extends StatefulWidget {
@@ -14,6 +15,13 @@ class ContactScreen extends StatefulWidget {
 }
 
 class _ContactScreenState extends State<ContactScreen> {
+
+
+  @override
+  void initState() {
+    AnalyticsService.logEvent("openContactPage");
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     double maxWidth = MediaQuery.of(context).size.width;
